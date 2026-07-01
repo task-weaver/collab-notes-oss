@@ -50,6 +50,42 @@ Here are 3 beginner-friendly tasks you can work on:
 
 ---
 
+### Task 4: Set Up Supabase PostgreSQL Database
+**Description**: Set up a Supabase project with PostgreSQL tables for spaces and notes.
+
+**Acceptance Criteria**:
+1. Create a new Supabase project (https://supabase.com/)
+2. Create a SQL schema with 2 tables:
+   - `spaces`: id, name, github_repo_url, user_id, created_at, updated_at
+   - `notes`: id, space_id, title, content, github_issue_url, user_id, created_at, updated_at
+3. Add the Supabase project URL and anon key to `.env.example`
+4. Write a quick setup guide for new contributors in README.md
+
+**Resources**:
+- Supabase Docs: https://supabase.com/docs
+- Supabase SQL Editor: https://supabase.com/docs/guides/database
+
+---
+
+### Task 5: Replace Local Storage with Supabase CRUD APIs
+**Description**: Create Next.js API routes for CRUD operations on notes and spaces using Supabase.
+
+**Acceptance Criteria**:
+1. Create API routes like:
+   - `/api/spaces` (GET, POST)
+   - `/api/spaces/[spaceId]` (GET, PUT, DELETE)
+   - `/api/notes` (GET, POST)
+   - `/api/notes/[noteId]` (GET, PUT, DELETE)
+2. Use `@supabase/supabase-js` to interact with the PostgreSQL database
+3. Update the `/notes` page to use these API routes instead of local storage
+4. Make sure routes are protected (only logged-in users can access their own spaces/notes)
+
+**Resources**:
+- Next.js App Router API Routes: https://nextjs.org/docs/app/building-your-application/routing/route-handlers
+- Supabase JavaScript Client: https://supabase.com/docs/reference/javascript/introduction
+
+---
+
 ## How to Contribute
 
 1. Fork the repo
